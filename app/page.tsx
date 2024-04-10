@@ -6,6 +6,7 @@ export default function Home() {
     <main className={styles.main}>
     
       <h1>Welcome to nextjs with deployed by AWS Amplify</h1>
+      哈哈哈哈哈哈
       <div className={styles.center}>
         <Image
           className={styles.logo}
