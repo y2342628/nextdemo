@@ -6,7 +6,7 @@ import browserRequest from '@/utils/browserRequest';
 
 
 async function fetcher (){
-    const res=await browserRequest({url:"/api/test",method:"get"});
+    const res:any=await browserRequest({url:"/api/test",method:"get"});
 
     return res.data
 
@@ -16,7 +16,7 @@ async function fetcher (){
 export default function Counter() {
   const [show, setShow] = useState(false)
 
-  const { data, error, trigger} = useSWRMutation('/api/user/123', fetcher);
+  const { data, error, trigger} = useSWRMutation('12321321312', fetcher);
 
  
  
