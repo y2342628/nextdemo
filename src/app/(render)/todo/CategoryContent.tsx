@@ -61,11 +61,7 @@ export default function CategoryContent({
     <>
       <ListGroup>
         {sortTodoByCategory?.map((todo) => (
-          <ListGroup.Item
-            className="py-3"
-            key={todo.ToDoId}
-            variant={todo.ToDoStatus === 0 ? "" : "success"}
-          >
+          <ListGroup.Item className="py-3" key={todo.ToDoId} variant={todo.ToDoStatus === 0 ? "" : "success"}>
             <Row>
               {todo.modifyStatus ? (
                 <Col>
@@ -86,11 +82,7 @@ export default function CategoryContent({
                         <Button className="mt-1" type="submit">
                           save
                         </Button>
-                        <Button
-                          className="mt-1 ms-1"
-                          variant="secondary"
-                          onClick={() => setModifyId("")}
-                        >
+                        <Button className="mt-1 ms-1" variant="secondary" onClick={() => setModifyId("")}>
                           cancel
                         </Button>
                       </Col>
@@ -98,37 +90,14 @@ export default function CategoryContent({
                   </Form>
                 </Col>
               ) : (
-                <Col>
-                  {todo.ToDoStatus ? (
-                    <del>{todo.ToDoDescription}</del>
-                  ) : (
-                    todo.ToDoDescription
-                  )}
-                </Col>
+                <Col>{todo.ToDoStatus ? <del>{todo.ToDoDescription}</del> : todo.ToDoDescription}</Col>
               )}
 
               {todo.modifyStatus ? null : (
                 <Col xs={2} md={2}>
-                  <BsPencilSquare
-                    size={26}
-                    className="pointer"
-                    color="var(--bs-blue)"
-                    onClick={() => showModifyInput(todo)}
-                  />
-                  <BsTrash
-                    size={26}
-                    className="mx-4 pointer"
-                    color="var(--bs-blue)"
-                    onClick={() => confirmItem(todo.ToDoId)}
-                  />
-                  {!todo.ToDoStatus && (
-                    <BsCheck2
-                      size={26}
-                      className="pointer"
-                      color="var(--bs-blue)"
-                      onClick={() => doneItem(todo.ToDoId)}
-                    />
-                  )}
+                  <BsPencilSquare title="modify" size={26} className="pointer" color="var(--bs-blue)" onClick={() => showModifyInput(todo)} />
+                  <BsTrash title="delete" size={26} className="mx-4 pointer" color="var(--bs-blue)" onClick={() => confirmItem(todo.ToDoId)} />
+                  {!todo.ToDoStatus && <BsCheck2 title="done" size={26} className="pointer" color="var(--bs-blue)" onClick={() => doneItem(todo.ToDoId)} />}
                 </Col>
               )}
             </Row>
