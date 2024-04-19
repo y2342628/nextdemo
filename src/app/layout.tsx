@@ -1,10 +1,8 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
-import Nav from "@/components/Nav"
-import { Container } from "react-bootstrap";
-import { ToastContainer, toast } from 'react-toastify';
+import Nav from "@/components/Nav";
+import { ToastContainer, toast } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,13 +16,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav/>  
-        <Container>{children}</Container>
+        <Nav />
+        <main>{children}</main>
         <ToastContainer />
       </body>
     </html>
