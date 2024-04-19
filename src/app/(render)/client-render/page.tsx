@@ -16,7 +16,7 @@ async function fetcher (){
 export default function Counter() {
   const [show, setShow] = useState(false)
 
-  const { data, error, trigger} = useSWRMutation('12321321312', fetcher);
+  const { data, error, trigger} = useSWRMutation('/api/test', fetcher);
 
  
  
