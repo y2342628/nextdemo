@@ -27,8 +27,8 @@ export default function customNav() {
       <Navbar bg="dark" data-bs-theme="dark" className="p-3 fs-3">
         <Navbar.Brand href="/" >
           <Image
-            src="/next.svg"
-            alt="Next.js Logo"
+            src="/logo.png"
+            alt="Logo"
             width={150}
             height={37}
             priority
@@ -36,7 +36,7 @@ export default function customNav() {
         </Navbar.Brand>
         {navs.map((nav) => {
           return (
-            <Nav key={nav.href} className={classNames("mx-2", style.navItem)}>
+            <Nav key={nav.href} className={classNames("mx-2", style.navItem,{[style.active]:nav.active})}>
               <Link href={nav.href}>{nav.label}</Link>
             </Nav>
           );
