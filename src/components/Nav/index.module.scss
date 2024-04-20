@@ -1,8 +1,9 @@
 .navItem{
+    opacity: 0.5;
     a{
         text-decoration: none;
     }
     &.active{
-        background-color: var();
+        opacity:1;
     }
 }
