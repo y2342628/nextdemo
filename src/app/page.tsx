@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <main className="flex  p-2">
-      <h3>Welcome!~</h3>
+      <h3>Welcome!~~</h3>
       <BannerCarousel />
     </main>
   );
