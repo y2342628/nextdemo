@@ -22,7 +22,7 @@ function CategoryTabs({
       data?.map((i) => ({
         ...i,
         todoByCategory: todo?.filter(
-          (t) => t.ToDoCategoryId === i.ToDoCategoryId
+          (t) => t.toDoCategoryId === i.toDoCategoryId
         ),
       })),
     [data, todo]
@@ -31,16 +31,16 @@ function CategoryTabs({
   if (!_data) return null;
   return (
     <Tabs
-      defaultActiveKey={_data[0]?.ToDoCategoryId}
+      defaultActiveKey={_data[0]?.toDoCategoryId}
       id="justify-tab-example"
       className="mb-3"
       justify
     >
       {_data?.map((i) => (
         <Tab
-          key={i.ToDoCategoryId}
-          eventKey={i.ToDoCategoryId}
-          title={i.ToDoCategoryName}
+          key={i.toDoCategoryId}
+          eventKey={i.toDoCategoryId}
+          title={i.toDoCategoryName}
         >
           <CategoryContent todoByCategory={i.todoByCategory} deleteItem={deleteItem}  doneItem={doneItem} updateItem={updateItem}/>
         </Tab>

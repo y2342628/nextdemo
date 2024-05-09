@@ -1,13 +1,13 @@
 export interface CategoryItem {
-    ToDoCategoryName: string;
-    ToDoCategoryId: string;
+    toDoCategoryName: string;
+    toDoCategoryId: string;
   }
 
   export interface TodoItem {
-    ToDoCategoryId: string;
-    ToDoId: string;
-    ToDoDescription:string;
-    ToDoStatus:number
+    toDoCategoryId: string;
+    toDoId: string;
+    toDoDescription:string;
+    toDoStatus:number
   }
 
   export interface CategoryItemWithTodo extends CategoryItem {

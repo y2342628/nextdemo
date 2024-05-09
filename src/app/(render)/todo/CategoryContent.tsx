@@ -29,10 +29,10 @@ export default function CategoryContent({
   const sortTodoByCategory = useMemo(
     () =>
       todoByCategory
-        ?.sort((a, b) => a.ToDoStatus - b.ToDoStatus)
+        ?.sort((a, b) => a.toDoStatus - b.toDoStatus)
         .map((i) => ({
           ...i,
-          modifyStatus: modifyId === i.ToDoId,
+          modifyStatus: modifyId === i.toDoId,
         })),
     [todoByCategory, modifyId]
   );
@@ -52,16 +52,16 @@ export default function CategoryContent({
   };
 
   const showModifyInput = (todo: TodoItem) => {
-    setValue("toDoId", todo.ToDoId);
-    setValue("toDoDescription", todo.ToDoDescription);
-    setModifyId(todo.ToDoId);
+    setValue("toDoId", todo.toDoId);
+    setValue("toDoDescription", todo.toDoDescription);
+    setModifyId(todo.toDoId);
   };
 
   return (
     <>
       <ListGroup>
         {sortTodoByCategory?.map((todo) => (
-          <ListGroup.Item className="py-3" key={todo.ToDoId} variant={todo.ToDoStatus === 0 ? "" : "success"}>
+          <ListGroup.Item className="py-3" key={todo.toDoId} variant={todo.toDoStatus === 0 ? "" : "success"}>
             <Row>
               {todo.modifyStatus ? (
                 <Col>
@@ -90,14 +90,14 @@ export default function CategoryContent({
                   </Form>
                 </Col>
               ) : (
-                <Col>{todo.ToDoStatus ? <del>{todo.ToDoDescription}</del> : todo.ToDoDescription}</Col>
+                <Col>{todo.toDoStatus ? <del>{todo.toDoDescription}</del> : todo.toDoDescription}</Col>
               )}
 
               {todo.modifyStatus ? null : (
                 <Col xs={2} md={2}>
                   <BsPencilSquare title="modify" size={26} className="pointer" color="var(--bs-blue)" onClick={() => showModifyInput(todo)} />
-                  <BsTrash title="delete" size={26} className="mx-4 pointer" color="var(--bs-blue)" onClick={() => confirmItem(todo.ToDoId)} />
-                  {!todo.ToDoStatus && <BsCheck2 title="done" size={26} className="pointer" color="var(--bs-blue)" onClick={() => doneItem(todo.ToDoId)} />}
+                  <BsTrash title="delete" size={26} className="mx-4 pointer" color="var(--bs-blue)" onClick={() => confirmItem(todo.toDoId)} />
+                  {!todo.toDoStatus && <BsCheck2 title="done" size={26} className="pointer" color="var(--bs-blue)" onClick={() => doneItem(todo.toDoId)} />}
                 </Col>
               )}
             </Row>
