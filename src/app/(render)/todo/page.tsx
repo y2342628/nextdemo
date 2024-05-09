@@ -73,8 +73,8 @@ export default function Page() {
         <Col xs={3} md={3} className="d-flex">
           <Form.Select {...register("toDoCategoryId")}>
             {category?.map((i) => (
-              <option key={i.ToDoCategoryId} value={i.ToDoCategoryId}>
-                {i.ToDoCategoryName}
+              <option key={i.toDoCategoryId} value={i.toDoCategoryId}>
+                {i.toDoCategoryName}
               </option>
             ))}
           </Form.Select>

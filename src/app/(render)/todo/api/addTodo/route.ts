@@ -1,17 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: NextRequest) {
+import { custom_middleware } from "@/utils/apiMiddleware";
+
+const main_handler = async (request: NextRequest, response: NextResponse) => {
   const body = await request.json();
-  const res = await fetch(
-    "https://wskua43dqg.execute-api.ap-southeast-1.amazonaws.com/todo/add",
-    {next: { revalidate:0 },  method: "POST", body:JSON.stringify(body) }
 
-  );
+  return fetch(process.env.BASE_HOST + "todo/add", {
+    next: { revalidate: 0 },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+};
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  const data = await res.json();
-  return NextResponse.json({ data });
-}
+/// Wrapping handle in custom_middleware
+export const POST = custom_middleware(main_handler);
