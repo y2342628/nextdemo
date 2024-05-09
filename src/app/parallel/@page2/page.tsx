@@ -1,3 +1,3 @@
 export default function page() {
-  return <div>这是平行路由page2</div>;
+  return <div>this is a parallel page: page2</div>;
 }
