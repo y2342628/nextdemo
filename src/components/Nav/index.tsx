@@ -40,9 +40,7 @@ export default function customNav() {
         <span className="mx-5 custom-link">Request a Brochure</span>
         <span className="custom-link">Find a Tour</span>
       </div>
-      <div d-flex>
-        
-      </div>
+  
       <Navbar bg="dark" data-bs-theme="dark" className="p-3 fs-3">
         <Navbar.Brand href="/">
           <Image src="/logo.png" alt="Logo" width={160} height={32} priority />
