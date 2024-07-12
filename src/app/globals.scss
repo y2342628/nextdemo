@@ -19,3 +19,14 @@ body {
   cursor: pointer;
 }
 
+.custom-link{
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+header a{
+  color:#fff;
+  margin: 0 30px;
+  font-size: 18px;
+}
