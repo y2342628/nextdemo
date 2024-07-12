@@ -25,8 +25,13 @@ body {
     text-decoration: underline;
   }
 }
-header a{
-  color:#fff;
-  margin: 0 30px;
-  font-size: 18px;
+
+
+.customHeader{
+  border-top: 8px solid #f2d13e ;
+  box-shadow: 0 4px 4px #d1d1d1;
+  border-radius: 4px;
+  a{
+    color:#333;
+  }
 }

@@ -16,7 +16,7 @@ export default function customNav() {
     return [
       { href: "/", label: "Browse Tours" },
       {
-        href: "https://main.d1xwonrohwbh5u.amplifyapp.com?comp=duv",
+        href: "https://main.d1xwonrohwbh5u.amplifyapp.com?comp=orion",
         label: "Group Portal",
         type: "link",
       },
@@ -27,31 +27,16 @@ export default function customNav() {
   }, [pathname]);
 
   return (
-    <header>
-      <div
-        style={{
-          background: "rgba(var(--bs-dark-rgb))",
-          color: "#fff",
-          fontSize: 13,
-        }}
-        className="d-flex justify-content-end py-2 pe-4"
-      >
-        <span className="custom-link">+1 888 396 5383</span>
-        <span className="mx-5 custom-link">Request a Brochure</span>
-        <span className="custom-link">Find a Tour</span>
-      </div>
-      <div d-flex>
-        
-      </div>
-      <Navbar bg="dark" data-bs-theme="dark" className="p-3 fs-3">
+    <header className="customHeader d-flex">
+      <Navbar className="p-3 fs-3 flex-fill">
         <Navbar.Brand href="/">
-          <Image src="/logo.png" alt="Logo" width={160} height={32} priority />
+          <Image src="/logo.png" alt="Logo" width={250} height={74} priority />
         </Navbar.Brand>
         {navs.map((nav) => {
           return (
             <Nav
               key={nav.href}
-              className={classNames("mx-2", style.navItem, {
+              className={classNames("mx-4", style.navItem, {
                 [style.active]: nav.active,
               })}
             >
@@ -65,6 +50,25 @@ export default function customNav() {
           );
         })}
       </Navbar>
+      <div className="d-flex align-items-center me-5 ">
+        <Image src="/tel.png" alt="Logo" width={31} height={40} priority />
+        <div style={{
+          maxWidth:200,
+          marginLeft:8,
+          fontSize:16,
+          fontWeight:600
+        }}>
+          <div
+            style={{
+              color: "#f2d13e",
+              textTransform: "uppercase",
+            }}
+          >
+            YOUR FIRST VISIT? CALL FOR INFO
+          </div>
+          <div>(800) 808 6579</div>
+        </div>
+      </div>
     </header>
   );
 }
